@@ -40,6 +40,19 @@ void process18() {
   }
 }
 
+void process23() {
+  Point point;
+
+  printf("Введите координаты точки: ");
+  scanf("%f %f", &point.x, &point.y);
+
+  if (fabsf(point.x) + fabsf(point.y) <= 1 && ((point.x <= 0 && point.y >= 0) || (point.x >= 0 && point.y <= 0))) {
+    printf("Точка принадлежит фигуре 23\n");
+  } else {
+    printf("Точка не принадлежит фигуре 23\n");
+  }
+}
+
 void process24() {
   Point point;
 
@@ -65,6 +78,9 @@ int main() {
     break;
     case 18:
       process18();
+    break;
+    case 23:
+      process23();
     break;
     case 24:
       process24();
