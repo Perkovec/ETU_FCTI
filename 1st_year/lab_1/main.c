@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
 #include <math.h>
 #include "main.h"
 
@@ -46,7 +45,7 @@ void process23() {
   printf("Введите координаты точки: ");
   scanf("%f %f", &point.x, &point.y);
 
-  if (fabsf(point.x) + fabsf(point.y) <= 1 && ((point.x <= 0 && point.y >= 0) || (point.x >= 0 && point.y <= 0))) {
+  if (((point.x <= 0 && point.y >= 0) || (point.x >= 0 && point.y <= 0)) && fabsf(point.x) + fabsf(point.y) <= 1) {
     printf("Точка принадлежит фигуре 23\n");
   } else {
     printf("Точка не принадлежит фигуре 23\n");
@@ -59,7 +58,7 @@ void process24() {
   printf("Введите координаты точки: ");
   scanf("%f %f", &point.x, &point.y);
 
-  if (point.x >= point.y && point.x <= 0) {
+  if (fabsf(point.x) + fabsf(point.y) >= 1 && point.x <= 0 && point.x >= -1) {
     printf("Точка принадлежит фигуре 24\n");
   } else {
     printf("Точка не принадлежит фигуре 24\n");
